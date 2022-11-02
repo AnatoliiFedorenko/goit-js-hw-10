@@ -24,9 +24,9 @@ searchForm.addEventListener(
     fetchCountries(query)
       .then(responce => {
         if (responce.length === 1) {
-          renderCountriList(responce[0]);
+          renderCountryInfo(responce[0]);
         } else if (responce.length <= 10) {
-          renderCountryesInfo(responce);
+          renderCountriesList(responce);
         } else
           Notiflix.Notify.info(
             'Too many matches found. Please enter a more specific name.'
@@ -38,7 +38,7 @@ searchForm.addEventListener(
   }, DEBOUNCE_DELAY)
 );
 
-function renderCountryesInfo(countries) {
+function renderCountriesList(countries) {
   const markup = countries
     .map(({ name: { official }, flags: { svg } }) => {
       return `
@@ -52,7 +52,7 @@ function renderCountryesInfo(countries) {
   countryList.insertAdjacentHTML('beforeend', markup);
 }
 
-function renderCountriList(country) {
+function renderCountryInfo(country) {
   const markup = country
     .map(
       ({
