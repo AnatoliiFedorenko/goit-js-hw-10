@@ -49,7 +49,7 @@ function renderCountriesList(countries) {
       `;
     })
     .join('');
-  countryList.insertAdjacentHTML('beforeend', markup);
+  countryList.innerHTML = markup;
 }
 
 function renderCountryInfo(country) {
@@ -74,5 +74,5 @@ function renderCountryInfo(country) {
       }
     )
     .join('');
-  countryInfo.insertAdjacentHTML('beforeend', markup);
+  countryInfo.innerHTML = markup;
 }
