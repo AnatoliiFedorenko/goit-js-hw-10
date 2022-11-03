@@ -25,7 +25,6 @@ searchForm.addEventListener(
       .then(responce => {
         if (responce.length === 1) {
           renderCountryInfo(responce[0]);
-          // console.log(responce[0]);
         } else if (responce.length <= 10) {
           renderCountriesList(responce);
         } else
@@ -60,13 +59,15 @@ function renderCountryInfo({
   population,
   languages,
 }) {
+  const language = Object.values(languages).join(',');
+  console.log(capital);
   const markup = `
           <li class="info">
-            <img src="${svg}" alt="">
+            <img src="${svg}"  alt="flag" width="120" height = "50">
             <p><b>Country</b>: ${official}</p>
             <p><b>Capital</b>: ${capital}</p>
             <p><b>Population</b>: ${population}</p>
-            <p><b>Languages</b>: ${languages}</p>
+            <p><b>Languages</b>: ${language}</p>
           </li>
       `;
   countryInfo.innerHTML = markup;
