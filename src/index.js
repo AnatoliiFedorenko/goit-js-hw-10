@@ -76,6 +76,7 @@ function renderCountryInfo({
             <p><b>Population</b>: ${population}</p>
             <p><b>Languages</b>: ${language}</p>
         </div>
+    </div>
       `;
   countryInfo.innerHTML = markup;
 }
