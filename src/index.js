@@ -25,6 +25,7 @@ searchForm.addEventListener(
       .then(responce => {
         if (responce.length === 1) {
           renderCountryInfo(responce[0]);
+          // console.log(responce[0]);
         } else if (responce.length <= 10) {
           renderCountriesList(responce);
         } else
@@ -52,17 +53,14 @@ function renderCountriesList(countries) {
   countryList.innerHTML = markup;
 }
 
-function renderCountryInfo(country) {
-  const markup = country
-    .map(
-      ({
-        name: { official },
-        flags: { svg },
-        capital,
-        population,
-        languages,
-      }) => {
-        return `
+function renderCountryInfo({
+  name: { official },
+  flags: { svg },
+  capital,
+  population,
+  languages,
+}) {
+  const markup = `
           <li class="info">
             <img src="${svg}" alt="">
             <p><b>Country</b>: ${official}</p>
@@ -71,8 +69,5 @@ function renderCountryInfo(country) {
             <p><b>Languages</b>: ${languages}</p>
           </li>
       `;
-      }
-    )
-    .join('');
   countryInfo.innerHTML = markup;
 }
