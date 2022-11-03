@@ -62,13 +62,20 @@ function renderCountryInfo({
   const language = Object.values(languages).join(',');
   console.log(capital);
   const markup = `
-          <li class="info">
-            <img src="${svg}"  alt="flag" width="120" height = "50">
-            <p><b>Country</b>: ${official}</p>
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="${svg}"  alt="flag">
+         </div>
+      </div>
+    </div>
+    <div class="text-container">
+      <h3> ${official}</h3>
+        <div>
             <p><b>Capital</b>: ${capital}</p>
             <p><b>Population</b>: ${population}</p>
             <p><b>Languages</b>: ${language}</p>
-          </li>
+        </div>
       `;
   countryInfo.innerHTML = markup;
 }
