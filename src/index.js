@@ -60,7 +60,7 @@ function renderCountryInfo({
   languages,
 }) {
   const language = Object.values(languages).join(',');
-  console.log(capital);
+
   const markup = `
     <div class="img-container">
       <div class="img-inner">
