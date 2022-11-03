@@ -72,9 +72,9 @@ function renderCountryInfo({
     <div class="text-container">
       <h3> ${official}</h3>
         <div>
-            <p><b>Capital</b>: ${capital}</p>
-            <p><b>Population</b>: ${population}</p>
-            <p><b>Languages</b>: ${language}</p>
+            <p><b>Capital</b>: <i>${capital}</i></p>
+            <p><b>Population</b>: <i>${population}</i></p>
+            <p><b>Languages</b>: <i>${language}</i></p>
         </div>
     </div>
       `;
